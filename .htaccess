@@ -1,0 +1,42 @@
+# Кодировка по умолчанию
+php_value default_charset UTF-8
+AddDefaultCharset UTF-8
+
+# Запрещаем просмотр некоторых файлов
+<FilesMatch "(cron)\.php"> 
+Deny from all 
+</FilesMatch>
+
+# Индексный Файл
+DirectoryIndex index.php
+Options -Indexes
+
+# Магические Кавычки
+php_flag magic_quotes_gpc Off
+php_flag magic_quotes_runtime Off
+php_flag magic_quotes_sybase Off
+
+# Разделитель между GET переменными
+php_value arg_separator.output "&amp;"
+
+# Глобальные переменные
+php_flag register_globals Off
+
+# Устаревшие суперглобальные масивы
+php_flag register_long_arrays Off
+
+# Отладка
+php_value date.timezone "Europe/Moscow"
+php_value error_reporting -1
+php_flag display_errors On
+php_flag html_errors On
+php_flag log_errors Off
+php_flag ignore_repeated_errors Off
+php_flag ignore_repeated_source Off
+
+
+# ERROR
+ErrorDocument 402 /str/error.php
+ErrorDocument 403 /str/error.php
+ErrorDocument 404 /str/error.php
+ErrorDocument 500 /str/error.php

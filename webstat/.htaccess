@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/msbirds.ru/webstat"
+AuthUserFile /var/www/deniko/data/etc/521575.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>
